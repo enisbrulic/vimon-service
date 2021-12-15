@@ -1,0 +1,20 @@
+gitlab:
+  access-token: ${GITLAB_READ_API}
+  # comma seperated project ids
+  project-ids: 32122602
+  pull-interval-minutes: 1
+
+quarkus:
+  banner:
+    # http://patorjk.com/software/taag/#p=display&f=Standard&t=vimon
+    path: banner.txt
+  tls:
+    trust-all: true
+  rest-client:
+    gitlab-api:
+      url: https://gitlab.com/api/v4
+  http:
+    cors:
+      ~: true
+      origins: "http://localhost:3000"
+      methods: "GET,OPTIONS"
