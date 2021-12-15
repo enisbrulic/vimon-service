@@ -1,12 +1,11 @@
 gitlab:
   access-token: ${GITLAB_READ_API}
-  # comma seperated project ids
-  project-ids: 32122602
+  project-ids: <COMMA SEPERATED GITLAB PROJECT IDS>
   pull-interval-minutes: 1
 
 quarkus:
   banner:
-    # http://patorjk.com/software/taag/#p=display&f=Standard&t=vimon
+    # generator: http://patorjk.com/software/taag/#p=display&f=Standard&t=vimon
     path: banner.txt
   tls:
     trust-all: true
@@ -16,5 +15,5 @@ quarkus:
   http:
     cors:
       ~: true
-      origins: "http://localhost:3000"
+      origins: "http://localhost:3000" #checkout ui git@github.com:enisbrulic/vimon-ui.git
       methods: "GET,OPTIONS"

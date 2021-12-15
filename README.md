@@ -1,6 +1,4 @@
-# vimon-service Project
-
-consolidate gitlab pipeline job services.
+# simple project to retrieve all jobs by project ids from gitlab
 
 ## Running the application in dev mode
 
