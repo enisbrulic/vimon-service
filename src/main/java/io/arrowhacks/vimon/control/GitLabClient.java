@@ -3,6 +3,7 @@ package io.arrowhacks.vimon.control;
 import io.arrowhacks.vimon.entity.Job;
 import io.arrowhacks.vimon.entity.Pipeline;
 import io.arrowhacks.vimon.entity.Project;
+import io.arrowhacks.vimon.entity.SchedulePipelines;
 import io.smallrye.mutiny.Uni;
 import org.eclipse.microprofile.rest.client.annotation.RegisterClientHeaders;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
@@ -64,4 +65,13 @@ public interface GitLabClient {
 	@Path("/{projectId}/pipelines")
 	Uni<Set<Pipeline>> getPipelines(@PathParam("projectId") String projectId, @QueryParam("source") String source, @QueryParam("per_page") int perPageCount);
 
+	/**
+	 * curl --header "PRIVATE-TOKEN: ${GITLAB_READ_API}" https://gitlab.example.com/api/v4/projects/{PROJECT_ID}/pipeline_schedules/{SCHEDULE_ID}
+	 *
+	 * @param projectId
+	 * @param scheduleId
+	 */
+	@GET
+	@Path("/{projectId}/pipeline_schedules/{scheduleId}")
+	Uni<SchedulePipelines> getSchedulePipelineDetails(@PathParam("projectId") String projectId, @PathParam("scheduleId") String scheduleId);
 }

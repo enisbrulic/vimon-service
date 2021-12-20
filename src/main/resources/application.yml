@@ -1,6 +1,8 @@
 gitlab:
   access-token: ${GITLAB_READ_API}
-  project-ids: <COMMA SEPERATED GITLAB PROJECT IDS>
+  # projects: projectId: scheduleId
+  projects:
+    <projectId>: <scheduleId>
   pull-interval-minutes: 1
 
 quarkus:

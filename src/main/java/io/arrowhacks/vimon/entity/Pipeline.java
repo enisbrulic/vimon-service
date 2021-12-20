@@ -8,4 +8,16 @@ public class Pipeline {
 	public String status;
 	public String source;
 	public String web_url;
+
+	@Override
+	public String toString() {
+		return "Pipeline{" +
+			"id='" + id + '\'' +
+			", project_id='" + project_id + '\'' +
+			", ref='" + ref + '\'' +
+			", status='" + status + '\'' +
+			", source='" + source + '\'' +
+			", web_url='" + web_url + '\'' +
+			'}';
+	}
 }
